@@ -1,4 +1,4 @@
-# Northline Analytics (web)
+# Northline Analytics
 
 SaaS-style analytics dashboard UI. All commands run **from this directory**.
 
