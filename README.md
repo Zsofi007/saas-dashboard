@@ -2,6 +2,12 @@
 
 SaaS-style analytics dashboard UI. All commands run **from this directory**.
 
+## Live app
+
+**Production:** [See here](https://saas-dashboard.zsofiakato.com/)
+
+If your Vercel project or custom domain uses a different hostname, update this link to match **Vercel → Project → Domains**.
+
 ## Commands
 
 ```bash
