@@ -1,7 +1,10 @@
 import { Bell, KeyRound, UserRound } from 'lucide-react'
 import { useId, useState } from 'react'
 import { Card } from '../components/ui/Card.tsx'
+import { CopyToClipboardButton } from '../components/ui/CopyToClipboardButton.tsx'
 import { PageHeader } from '../components/ui/PageHeader.tsx'
+
+const MOCK_API_SECRET = 'sk_live_mock_7f3c9a2e1b8d4c6a0e5f9d2b7a4c1e8'
 
 function ToggleRow({
   id,
@@ -146,15 +149,14 @@ export function SettingsPage() {
           </p>
           <div className="mt-4 flex flex-col gap-3 rounded-xl border border-dashed border-border bg-surface px-4 py-3 sm:flex-row sm:items-center sm:justify-between">
             <code className="break-all text-xs text-foreground" aria-label="Mock API secret key">
-              sk_live_mock_7f3c9a2e1b8d4c6a0e5f9d2b7a4c1e8
+              {MOCK_API_SECRET}
             </code>
-            <button
-              type="button"
-              className="shrink-0 rounded-lg border border-border bg-surface-elevated px-3 py-1.5 text-xs font-semibold text-foreground transition hover:border-accent/40"
-              aria-label="Copy mock API key to clipboard"
-            >
-              Copy
-            </button>
+            <CopyToClipboardButton
+              text={MOCK_API_SECRET}
+              idleLabel="Copy"
+              variant="copy"
+              ariaLabel="Copy mock API key to clipboard"
+            />
           </div>
         </Card>
       </div>

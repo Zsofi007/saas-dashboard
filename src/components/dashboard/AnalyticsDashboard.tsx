@@ -1,4 +1,5 @@
 import { useMemo, useState } from 'react'
+import { useLocation } from 'react-router-dom'
 import analyticsMock from '../../data/analytics.json' with { type: 'json' }
 import { useTheme } from '../../context/ThemeContext.tsx'
 import { getChartTheme } from '../../lib/chartTheme.ts'
@@ -6,6 +7,7 @@ import { formatCompact, formatCurrency, formatPercent } from '../../lib/format.t
 import type { AnalyticsMock, Period } from '../../types/analytics.ts'
 import { useSimulatedChartLoad } from '../../hooks/useSimulatedChartLoad.ts'
 import { Card } from '../ui/Card.tsx'
+import { CopyToClipboardButton } from '../ui/CopyToClipboardButton.tsx'
 import { ChartSkeleton } from '../ui/Skeleton.tsx'
 import { MetricCard } from './MetricCard.tsx'
 import { PeriodFilter } from './PeriodFilter.tsx'
@@ -17,11 +19,16 @@ const data = analyticsMock as AnalyticsMock
 
 export function AnalyticsDashboard() {
   const [period, setPeriod] = useState<Period>('7d')
+  const location = useLocation()
   const { theme } = useTheme()
   const chartsLoading = useSimulatedChartLoad(period)
   const chartTheme = useMemo(() => getChartTheme(theme), [theme])
 
   const bundle = data[period]
+  const pageUrl =
+    typeof window !== 'undefined'
+      ? `${window.location.origin}${location.pathname}${location.search}`
+      : ''
 
   return (
     <div className="space-y-8">
@@ -38,7 +45,16 @@ export function AnalyticsDashboard() {
             to compare cadence across weeks and quarters.
           </p>
         </div>
-        <PeriodFilter value={period} onChange={setPeriod} />
+        <div className="flex flex-wrap items-center justify-start gap-2 sm:justify-end">
+          {pageUrl ? (
+            <CopyToClipboardButton
+              text={pageUrl}
+              idleLabel="Copy link"
+              ariaLabel="Copy page link to clipboard"
+            />
+          ) : null}
+          <PeriodFilter value={period} onChange={setPeriod} />
+        </div>
       </header>
 
       <section className="grid gap-4 sm:grid-cols-2 xl:grid-cols-3" aria-label="Key metrics">
