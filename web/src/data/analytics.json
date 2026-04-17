@@ -1,0 +1,81 @@
+{
+  "7d": {
+    "metrics": {
+      "revenue": 42800,
+      "users": 12400,
+      "conversionRate": 4.1
+    },
+    "revenueOverTime": [
+      { "label": "Mon", "value": 5200 },
+      { "label": "Tue", "value": 6100 },
+      { "label": "Wed", "value": 4800 },
+      { "label": "Thu", "value": 7200 },
+      { "label": "Fri", "value": 6900 },
+      { "label": "Sat", "value": 5400 },
+      { "label": "Sun", "value": 7100 }
+    ],
+    "userGrowth": [
+      { "label": "Mon", "value": 120 },
+      { "label": "Tue", "value": 190 },
+      { "label": "Wed", "value": 150 },
+      { "label": "Thu", "value": 210 },
+      { "label": "Fri", "value": 175 },
+      { "label": "Sat", "value": 140 },
+      { "label": "Sun", "value": 205 }
+    ],
+    "trafficSources": [
+      { "name": "Organic", "value": 38 },
+      { "name": "Direct", "value": 28 },
+      { "name": "Referral", "value": 18 },
+      { "name": "Paid", "value": 16 }
+    ]
+  },
+  "30d": {
+    "metrics": {
+      "revenue": 186400,
+      "users": 48200,
+      "conversionRate": 3.6
+    },
+    "revenueOverTime": [
+      { "label": "W1", "value": 41200 },
+      { "label": "W2", "value": 46800 },
+      { "label": "W3", "value": 44100 },
+      { "label": "W4", "value": 54300 }
+    ],
+    "userGrowth": [
+      { "label": "W1", "value": 980 },
+      { "label": "W2", "value": 1240 },
+      { "label": "W3", "value": 1100 },
+      { "label": "W4", "value": 1380 }
+    ],
+    "trafficSources": [
+      { "name": "Organic", "value": 42 },
+      { "name": "Direct", "value": 24 },
+      { "name": "Referral", "value": 20 },
+      { "name": "Paid", "value": 14 }
+    ]
+  },
+  "90d": {
+    "metrics": {
+      "revenue": 542900,
+      "users": 128600,
+      "conversionRate": 3.2
+    },
+    "revenueOverTime": [
+      { "label": "Jan", "value": 168000 },
+      { "label": "Feb", "value": 172400 },
+      { "label": "Mar", "value": 202500 }
+    ],
+    "userGrowth": [
+      { "label": "Jan", "value": 3820 },
+      { "label": "Feb", "value": 4210 },
+      { "label": "Mar", "value": 4980 }
+    ],
+    "trafficSources": [
+      { "name": "Organic", "value": 45 },
+      { "name": "Direct", "value": 22 },
+      { "name": "Referral", "value": 21 },
+      { "name": "Paid", "value": 12 }
+    ]
+  }
+}
