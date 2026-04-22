@@ -24,8 +24,16 @@ export function Sidebar({ open, inert = false, onNavigate }: SidebarProps) {
         className="flex items-center gap-3 px-2 transition-opacity hover:opacity-90"
         aria-label="Northline home"
       >
-        <span className="flex h-10 w-10 items-center justify-center rounded-xl bg-accent text-sm font-bold text-white shadow-md shadow-accent/30" aria-hidden>
-          NL
+        <span
+          className="flex h-10 w-10 items-center justify-center overflow-hidden rounded-xl bg-accent/10 shadow-md shadow-accent/20 ring-1 ring-accent/15"
+          aria-hidden
+        >
+          <img
+            src="/saas-dashboard.png"
+            alt=""
+            className="h-full w-full object-cover"
+            draggable={false}
+          />
         </span>
         <span>
           <span className="font-display text-lg font-semibold leading-tight text-foreground">
